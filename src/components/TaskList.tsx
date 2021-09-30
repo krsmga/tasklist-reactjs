@@ -42,12 +42,15 @@ export function TaskList() {
   return (
     <section className="task-list container">
       <header>
-        <h2>Minhas tasks</h2>
+        
+        <div className="info">
+        <h2>My tasks</h2>       
+        Create your to-do list using the field on the side. Have a good time.</div>
 
         <div className="input-group">
           <input
             type="text"
-            placeholder="Adicionar novo todo"
+            placeholder="Add new todo"
             onChange={e => setNewTaskTitle(e.target.value)}
             value={newTaskTitle}
           />
@@ -62,6 +65,7 @@ export function TaskList() {
       </header>
 
       <main>
+        
         <ul>
           {tasks.map(task => (
             <li key={task.id}>
@@ -92,6 +96,10 @@ export function TaskList() {
           ))}
         </ul>
       </main>
+
+      <footer>
+        <p>Developed in ReactJS</p>
+      </footer>
     </section>
   )
 }
